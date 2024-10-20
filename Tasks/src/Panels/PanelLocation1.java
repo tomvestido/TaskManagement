@@ -122,7 +122,7 @@ public class PanelLocation1 extends JPanel implements ActionListener {
                 int row = table.rowAtPoint(point);
                 if (mouseEvent.getClickCount() == 2 && table.getSelectedRow() != -1) {
                     System.out.println("Click!");
-                    DialogChangeStatus dialogChangeStatus = new DialogChangeStatus(String.valueOf(tableApplications.getModel().getValueAt(PanelMain.panelLocation1.tableApplications.getSelectedRow(), 0)),String.valueOf(tableApplications.getModel().getValueAt(PanelMain.panelLocation1.tableApplications.getSelectedRow(), 5)));
+                    DialogChangeStatus dialogChangeStatus = new DialogChangeStatus(String.valueOf(tableApplications.getModel().getValueAt(PanelMain.panelLocation1.tableApplications.getSelectedRow(), 0)),String.valueOf(tableApplications.getModel().getValueAt(PanelMain.panelLocation1.tableApplications.getSelectedRow(), 12)));
                 }
             }
         });
@@ -260,7 +260,7 @@ public class PanelLocation1 extends JPanel implements ActionListener {
             if( PanelMain.panelLocation1.tableApplications.getSelectedRow() == -1 ) {
                 JOptionPane.showMessageDialog(null, "Nie wybrano zgłoszenia", "Komunikat", JOptionPane.INFORMATION_MESSAGE);
             }
-            DialogChangeStatus dialogChangeStatus = new DialogChangeStatus(String.valueOf(tableApplications.getModel().getValueAt(PanelMain.panelLocation1.tableApplications.getSelectedRow(), 0)),String.valueOf(tableApplications.getModel().getValueAt(PanelMain.panelLocation1.tableApplications.getSelectedRow(), 5)));
+            DialogChangeStatus dialogChangeStatus = new DialogChangeStatus(String.valueOf(tableApplications.getModel().getValueAt(PanelMain.panelLocation1.tableApplications.getSelectedRow(), 0)),String.valueOf(tableApplications.getModel().getValueAt(PanelMain.panelLocation1.tableApplications.getSelectedRow(), 12)));
         }
         if( e.getSource() == btnAdd) {
             DialogAdd dialogAdd = new DialogAdd();

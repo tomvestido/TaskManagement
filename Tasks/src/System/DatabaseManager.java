@@ -14,7 +14,7 @@ public class DatabaseManager {
 
     Connection connection = null;
     HashMap<String, String> usersData = new HashMap<>();
-    List<Task> listTasks = new ArrayList<Task>();
+    static List<Task> listTasks = new ArrayList<Task>();
 
     protected HashMap getUsersData() {
         return usersData;
@@ -71,18 +71,17 @@ public class DatabaseManager {
 
         }
     }
-    public void readObjectData(){
+    public static void readObjectData(){
         String query = "SELECT [ID],[STATUS],[DESCRIPTION],[LOCALIZATION],[ENTRANCE_DATE],[STARTED],[FINISHED],[REQUIRED_FINISH_DATE],[RESPONSIBLE_GROUP],[SMS],[MAIL],[TYPE],[COMMENT] FROM [O&M].[dbo].[Tasks_Object_1]";
+        Connection connection1 = null;
         Statement st = null;
         ResultSet rs = null;
         int counter = 0;
 
         try {
-            connection = DatabaseManager.getConnection();
-            st = connection.createStatement();
+            connection1 = DatabaseManager.getConnection();
+            st = connection1.createStatement();
             rs = st.executeQuery(query);
-
-
 
             while (rs.next()) {
 
@@ -113,11 +112,6 @@ public class DatabaseManager {
             }
 
             PanelMain.panelServices.btnLocation_1.labelNewServices.setText(String.valueOf(counter));
-
-            System.out.println(listTasks.get(0).comment);
-            System.out.println(listTasks.get(1).comment);
-            System.out.println(listTasks.get(2).comment);
-            System.out.println(listTasks.get(3).comment);
 
         } catch (Exception g){
             System.out.println("Niepoprawny odczyt zadan z lokalizacji 1");

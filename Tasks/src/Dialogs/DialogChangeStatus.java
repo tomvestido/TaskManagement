@@ -96,19 +96,19 @@ public class DialogChangeStatus extends JDialog implements ActionListener {
             // Wykonanie aktualizacji
             try {
                 connection = DatabaseManager.getConnection();
-                zapytanie = "UPDATE [O&M].[dbo].[Tasks_Object_1] SET [STATUS] = '" + String.valueOf(comboStatusEDIT.getSelectedItem()) + "',[TIMEMOD] = '" + PanelNavi.time.getText() + "',[MODBY] = '" + PanelNavi.labelUserDynamic.getText() + "', [COMMENT] = '" + tfCommentEDIT.getText() +  "' WHERE [ID] = " + actualID;
+                zapytanie = "UPDATE [O&M].[dbo].[Tasks_Object_1] SET [STATUS] = '" + String.valueOf(comboStatusEDIT.getSelectedItem()) + "', [COMMENT] = '" + tfCommentEDIT.getText() +  "' WHERE [ID] = " + actualID;
                 st = connection.createStatement();
                 rs = st.executeQuery(zapytanie);
 
-                // Zwolnienie zasobów
-                st.close();
-                connection.close();
             } catch (Exception g){
-            }
+                System.out.println("Nieudana aktualizacja");
+                System.out.println( g.getMessage());
 
+            }
+            
             // Odświeżenie tabeli
             PanelMain.panelLocation1.modelApplications.setRowCount(0);
-            DataReader.readDataLocation1();
+            DatabaseManager.readObjectData();
 
             // Zamknięcie okna po wykonaniu czynności
             dispose();

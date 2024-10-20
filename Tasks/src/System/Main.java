@@ -22,7 +22,7 @@ public class Main {
 
         DatabaseManager databaseManager = new DatabaseManager();
         databaseManager.readUsers();
-        databaseManager.readObjectData();
+        DatabaseManager.readObjectData();
 
         //DataReader.readDataLocation1();
 
