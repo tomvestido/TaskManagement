@@ -6,6 +6,11 @@ The app is designed to help companies managing renewable energy installations ef
 
 Java, Spring Data JPA, SQL, Swing
 
+## Photos
+
+![alt text](https://github.com/tomvestido/TaskManagement/blob/main/Tasks/photos/loginPage.PNG?raw=true)
+
+
 ## About me
 
 [LinkedIn](https://www.linkedin.com/in/tomasz-kiecka/)
