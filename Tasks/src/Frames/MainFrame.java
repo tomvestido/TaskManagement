@@ -2,8 +2,12 @@ package Frames;
 
 import Panels.*;
 import javax.swing.*;
+import System.*;
 
 public class MainFrame extends JFrame {
+
+    java.net.URL urlEV = getClass().getResource("/Images/logo-color.png");
+    ImageIcon imgEV = new ImageIcon(urlEV);
 
     // Deklaracja obiektów - Panel główny
     PanelMain panelMain = new PanelMain();
@@ -15,6 +19,7 @@ public class MainFrame extends JFrame {
         setTitle("O&M App");
         setLayout(null);
         setLocationRelativeTo(null);
+        setIconImage(imgEV.getImage());
         //setUndecorated(true);
 
         // Dodanie elementów do ramki

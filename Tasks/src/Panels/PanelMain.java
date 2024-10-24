@@ -33,7 +33,7 @@ public class PanelMain extends JPanel implements ActionListener {
         panelServices.setVisible(true);
 
         add(panelServices);
-        add(panelNavi);
+        //add(panelNavi);
         add(panelLocation1);
     }
 

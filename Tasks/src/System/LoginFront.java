@@ -12,12 +12,15 @@ public class LoginFront extends JFrame implements ActionListener {
     java.net.URL imgUrl_photo = getClass().getResource("/Images/polsl_big_pion.png");
     ImageIcon imgPhoto = new ImageIcon(imgUrl_photo);
 
-    JButton loginButton = new JButton("Zaloguj");
+    java.net.URL urlEV = getClass().getResource("/Images/logo-color-big.png");
+    ImageIcon imgEV = new ImageIcon(urlEV);
+
+    JButton loginButton = new JButton("Sign In");
     JTextField userIDField = new JTextField();
     JPasswordField userPasswordField = new JPasswordField();
-    JLabel userIDLabel = new JLabel("Nazwa użytkownika");
-    JLabel userPasswordLabel = new JLabel("Hasło");
-    JLabel headline = new JLabel("Logowanie do aplikacji");
+    JLabel userIDLabel = new JLabel("Username");
+    JLabel userPasswordLabel = new JLabel("Password");
+    JLabel headline = new JLabel("Sign In");
     JLabel headline_2 = new JLabel();
     JLabel photo = new JLabel();
 
@@ -31,38 +34,40 @@ public class LoginFront extends JFrame implements ActionListener {
         setResizable(false);
         setLayout(null);
         setLocationRelativeTo(null);
+        setIconImage(imgEV.getImage());
         setVisible(true);
 
         logininfo = loginInfoOriginal;
 
-        headline.setBounds(630,185,350,40);
+        headline.setBounds(650,185,350,40);
         headline.setFont(Style.fontSemibold18);
 
         headline_2.setText("O&M App");
-        headline_2.setBounds(630,220,350,20);
+        headline_2.setBounds(650,220,350,20);
         headline_2.setFont(Style.fontRegular16);
         headline_2.setForeground(Style.black);
 
-        userIDLabel.setBounds(630,285,200,25);
-        userIDLabel.setFont(Style.fontSemibold12);
-        userPasswordLabel.setBounds(630,360,75,25);
-        userPasswordLabel.setFont(Style.fontSemibold12);
+        userIDLabel.setBounds(650,285,200,25);
+        userIDLabel.setFont(Style.fontRegular12);
 
-        userIDField.setBounds(630,310,400,35);
+        userPasswordLabel.setBounds(650,360,75,25);
+        userPasswordLabel.setFont(Style.fontRegular12);
+
+        userIDField.setBounds(650,310,400,35);
         userIDField.setHorizontalAlignment(SwingConstants.RIGHT);
         userIDField.setFont(Style.fontRegular12);
 
-        userPasswordField.setBounds(630,385,400,35);
+        userPasswordField.setBounds(650,385,400,35);
         userPasswordField.setHorizontalAlignment(SwingConstants.RIGHT);
         userPasswordField.setFont(Style.fontRegular12);
 
-        loginButton.setBounds(630,480,400,45);
+        loginButton.setBounds(650,480,400,45);
         loginButton.setFont(Style.fontSemibold12);
         loginButton.setFocusable(false);
         loginButton.addActionListener(this);
 
         photo.setBounds(87,70,466,600);
-        photo.setIcon(imgPhoto);
+        photo.setIcon(imgEV);
 
         add(userIDLabel);
         add(userPasswordLabel);

@@ -1,8 +1,10 @@
 package Dialogs;
 import Panels.PanelMain;
 import System.*;
+import UI.LabelHeadline;
 import UI.LabelLight;
 import UI.LabelSemibold;
+import UI.LineLightGray;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,21 +16,36 @@ import java.sql.Statement;
 
 public class DialogTaskDetails extends JDialog implements ActionListener {
 
-    LabelLight labelID = new LabelLight(70,129,"ID");
-    LabelLight labelStatus = new LabelLight(70,192,"Status");
-    LabelLight labelDescription = new LabelLight(70,255,"Description");
-    LabelLight labelLocalization = new LabelLight(70,318,"Localization");
-    LabelLight labelType = new LabelLight(70,381,"Type");
-    LabelLight labelEntranceDate = new LabelLight(70,444,"Entrance date");
+    LabelHeadline labelHeadline = new LabelHeadline(70,75,"Task details");
+    LabelLight labelID = new LabelLight(70,119,"ID");
+    LabelLight labelStatus = new LabelLight(70,182,"Status");
+    LabelLight labelDescription = new LabelLight(70,245,"Description");
+    LabelLight labelLocalization = new LabelLight(70,308,"Localization");
+    LabelLight labelType = new LabelLight(70,371,"Type");
+    LabelLight labelEntranceDate = new LabelLight(70,434,"Entrance date");
+    LabelLight labelRequiredDate = new LabelLight(280,119,"Required Date");
+    LabelLight labelStarted = new LabelLight(280,182,"Started");
+    LabelLight labelFinished = new LabelLight(280,245,"Finished");
+    LabelLight labelResponsibleCompany = new LabelLight(280,308,"ResponsibleCompany");
+    LabelLight labelSMS = new LabelLight(280,371,"SMS");
+    LabelLight labelMail = new LabelLight(280,434,"Mail");
+    LabelLight labelComment = new LabelLight(490,119,"Comment");
 
-    LabelSemibold labelIDDynamic = new LabelSemibold(70,151, "Unknown");
-    LabelSemibold labelStatusDynamic = new LabelSemibold(70,214, "Unknown");
-    LabelSemibold labelDescriptionDynamic = new LabelSemibold(70,277,"Unknown");
-    LabelSemibold labelLocalizationDynamic = new LabelSemibold(70,340,"Unknown");
-    LabelSemibold labelTypeDynamic = new LabelSemibold(70,403,"Unknown");
-    LabelSemibold labelEntranceDateDynamic = new LabelSemibold(70,466,"Unknown");
+    LabelSemibold labelIDDynamic = new LabelSemibold(70,141, "Unknown");
+    LabelSemibold labelStatusDynamic = new LabelSemibold(70,204, "Unknown");
+    LabelSemibold labelDescriptionDynamic = new LabelSemibold(70,267,"Unknown");
+    LabelSemibold labelLocalizationDynamic = new LabelSemibold(70,330,"Unknown");
+    LabelSemibold labelTypeDynamic = new LabelSemibold(70,393,"Unknown");
+    LabelSemibold labelEntranceDateDynamic = new LabelSemibold(70,456,"Unknown");
 
 
+    LineLightGray line1 = new LineLightGray(70,111,400);
+    LineLightGray line2 = new LineLightGray(70,174,400);
+    LineLightGray line3 = new LineLightGray(70,237,400);
+    LineLightGray line4 = new LineLightGray(70,300,400);
+    LineLightGray line5 = new LineLightGray(70,363,400);
+    LineLightGray line6 = new LineLightGray(70,426,400);
+    LineLightGray line7 = new LineLightGray(70,489,400);
 
     JLabel labelDetailsEDIT = new JLabel("Edytuj status");
     JLabel labelStatusEDIT = new JLabel("Status zgłoszenia");
@@ -46,7 +63,7 @@ public class DialogTaskDetails extends JDialog implements ActionListener {
     String zapytanie;
     Statement st = null;
     ResultSet rs = null;
-    
+
     public DialogTaskDetails(Task task){
         setSize(1000,600);
         setTitle("Details");
@@ -70,12 +87,20 @@ public class DialogTaskDetails extends JDialog implements ActionListener {
         }
 
         // dodanie elementów
+        add(labelHeadline);
         add(labelID);
         add(labelStatus);
         add(labelDescription);
         add(labelLocalization);
         add(labelType);
         add(labelEntranceDate);
+        add(labelRequiredDate);
+        add(labelStarted);
+        add(labelFinished);
+        add(labelResponsibleCompany);
+        add(labelSMS);
+        add(labelMail);
+        add(labelComment);
 
         add(labelIDDynamic);
         add(labelStatusDynamic);
@@ -83,6 +108,14 @@ public class DialogTaskDetails extends JDialog implements ActionListener {
         add(labelLocalizationDynamic);
         add(labelTypeDynamic);
         add(labelEntranceDateDynamic);
+
+        add(line1);
+        add(line2);
+        add(line3);
+        add(line4);
+        add(line5);
+        add(line6);
+        add(line7);
     }
 
     @Override

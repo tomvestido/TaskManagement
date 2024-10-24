@@ -23,12 +23,12 @@ public class ButtonCategory extends JButton implements MouseListener {
         setOpaque(true);
         setFocusable(false);
         setContentAreaFilled(true);
-        setBackground(new Color(255, 255, 255));
+        setBackground(Style.white);
         addMouseListener(this);
 
         labelNewServices.setBounds(170,8,50,40);
         labelNewServices.setFont(Style.fontSemibold34);
-        labelNewServices.setForeground(Style.blue);
+        labelNewServices.setForeground(Style.pastelGreen);
         labelNewServices.setHorizontalAlignment(SwingConstants.RIGHT);
 
         labelCity.setBounds(10,203,155,20);
@@ -80,7 +80,7 @@ public class ButtonCategory extends JButton implements MouseListener {
     @Override
     public void mouseEntered(MouseEvent e) {
         setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        setBackground(Style.blue);
+        setBackground(Style.pastelGreen);
         labelCity.setForeground(Style.white);
         labelNewServices.setForeground(Style.white);
     }
@@ -89,6 +89,6 @@ public class ButtonCategory extends JButton implements MouseListener {
     public void mouseExited(MouseEvent e) {
         setBackground(Style.white);
         labelCity.setForeground(Style.darkGray);
-        labelNewServices.setForeground(Style.blue);
+        labelNewServices.setForeground(Style.pastelGreen);
     }
 }
