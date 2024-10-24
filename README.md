@@ -4,7 +4,7 @@ The app is designed to help companies managing renewable energy installations ef
 
 ## Technologies
 
-Java, SQL, JPA, Swing
+Java, Spring Data JPA, SQL, Swing
 
 ## About me
 
