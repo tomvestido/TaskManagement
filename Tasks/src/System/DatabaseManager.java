@@ -14,10 +14,13 @@ public class DatabaseManager {
 
     Connection connection = null;
     HashMap<String, String> usersData = new HashMap<>();
-    static List<Task> listTasks = new ArrayList<Task>();
+    public static List<Task> listTasks = new ArrayList<Task>();
 
     protected HashMap getUsersData() {
         return usersData;
+    }
+    public List getListTasksObject1(){
+        return listTasks;
     }
     public static Connection getConnection() {
         Connection connection;

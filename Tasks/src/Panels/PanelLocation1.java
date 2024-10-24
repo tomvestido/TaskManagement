@@ -122,7 +122,8 @@ public class PanelLocation1 extends JPanel implements ActionListener {
                 int row = table.rowAtPoint(point);
                 if (mouseEvent.getClickCount() == 2 && table.getSelectedRow() != -1) {
                     System.out.println("Click!");
-                    DialogChangeStatus dialogChangeStatus = new DialogChangeStatus(String.valueOf(tableApplications.getModel().getValueAt(PanelMain.panelLocation1.tableApplications.getSelectedRow(), 0)),String.valueOf(tableApplications.getModel().getValueAt(PanelMain.panelLocation1.tableApplications.getSelectedRow(), 12)));
+                    DialogTaskDetails dialogChangeStatus = new DialogTaskDetails(DatabaseManager.listTasks.get(PanelMain.panelLocation1.tableApplications.getSelectedRow()));
+
                 }
             }
         });
@@ -260,7 +261,9 @@ public class PanelLocation1 extends JPanel implements ActionListener {
             if( PanelMain.panelLocation1.tableApplications.getSelectedRow() == -1 ) {
                 JOptionPane.showMessageDialog(null, "Nie wybrano zgłoszenia", "Komunikat", JOptionPane.INFORMATION_MESSAGE);
             }
-            DialogChangeStatus dialogChangeStatus = new DialogChangeStatus(String.valueOf(tableApplications.getModel().getValueAt(PanelMain.panelLocation1.tableApplications.getSelectedRow(), 0)),String.valueOf(tableApplications.getModel().getValueAt(PanelMain.panelLocation1.tableApplications.getSelectedRow(), 12)));
+            //DialogTaskDetails dialogChangeStatus = new DialogTaskDetails(String.valueOf(tableApplications.getModel().getValueAt(PanelMain.panelLocation1.tableApplications.getSelectedRow(), 0)),String.valueOf(tableApplications.getModel().getValueAt(PanelMain.panelLocation1.tableApplications.getSelectedRow(), 12)));
+            DialogTaskDetails dialogChangeStatus = new DialogTaskDetails(DatabaseManager.listTasks.get(PanelMain.panelLocation1.tableApplications.getSelectedRow()));
+
         }
         if( e.getSource() == btnAdd) {
             DialogAdd dialogAdd = new DialogAdd();

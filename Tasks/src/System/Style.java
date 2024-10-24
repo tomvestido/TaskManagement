@@ -2,6 +2,11 @@ package System;
 import java.awt.*;
 
 public class Style {
+    // Czcionki Light
+    public static Font fontLight12 = new Font("Montserrat Light", Font.PLAIN, 12);
+    public static Font fontLight14 = new Font("Montserrat Light", Font.PLAIN, 14);
+
+
     // Czcionki Regular
     public static Font fontRegular12 = new Font("Montserrat Regular", Font.PLAIN, 12);
     public static Font fontRegular13 = new Font("Montserrat Regular", Font.PLAIN, 13);
